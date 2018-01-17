@@ -13,7 +13,7 @@ import (
 )
 
 var (
-  echoEndpoint = flag.String("echo_endpoint", "localhost:9090", "endpoint of YourService")
+  poseidonEndpoint = flag.String("get_Poseidon", "localhost:9090", "PingPoseidon")
 )
 
 func run() error {
@@ -23,7 +23,7 @@ func run() error {
 
   mux := runtime.NewServeMux()
   opts := []grpc.DialOption{grpc.WithInsecure()}
-  err := gw.RegisterYourServiceHandlerFromEndpoint(ctx, mux, *echoEndpoint, opts)
+  err := gw.RegisterYourServiceHandlerFromEndpoint(ctx, mux, *poseidonEndpoint, opts)
   if err != nil {
     return err
   }
