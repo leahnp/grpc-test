@@ -26,9 +26,9 @@ service PingPoseidon {
   rpc GetPoseidonAgain (HelloPoseidon) returns (PoseidonReply) {}
 
   // REST greeting
-  rpc get_Poseidon (HelloPoseidon) returns (PoseidonReply) {
+  rpc get_poseidon (HelloPoseidon) returns (PoseidonReply) {
     option (google.api.http) = {
-      post: "/v1/example/RestGetPoseidon"
+      post: "/v1/example/get_poseidon"
       body: "*"
     };
   }
