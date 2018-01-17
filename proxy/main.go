@@ -13,7 +13,7 @@ import (
 )
 
 var (
-  poseidonEndpoint = flag.String("get_Poseidon", "localhost:9090", "PingPoseidon")
+  poseidonEndpoint = flag.String("get_Poseidon", "localhost:9090", "endpoint of PingPoseidon")
 )
 
 func run() error {
