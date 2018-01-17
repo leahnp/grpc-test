@@ -21,16 +21,20 @@ package main
 import (
 	"log"
 	"os"
+	"fmt"
 
+	"golang.org/x/net/context"
+	"google.golang.org/grpc"
+	pb "github.com/leahnp/grpc-test/trident_api"
 )
 
 const (
-	address     = "localhost:50051"
+	address     = "0.0.0.0:5300"
 	defaultName = "trident"
 )
 
 func main() {
-
+	fmt.Println("Client starting")
 	
 	// Set up a connection to the server.
 	conn, err := grpc.Dial(address, grpc.WithInsecure())

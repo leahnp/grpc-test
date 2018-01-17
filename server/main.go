@@ -3,15 +3,16 @@ package main
 import (
 	"log"
 	"net"
+	"fmt"
 
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
-	pb "github.com/leahnp/grpc-test/trident_api"
+	pb "github.com/samsung-cnct/sample-grpc-apiserver/api"
 	"google.golang.org/grpc/reflection"
 )
 
 const (
-	port = ":50051"
+	port = ":5300"
 )
 
 // server is used to implement helloworld.GreeterServer.
@@ -27,6 +28,7 @@ func (s *server) GetPoseidonAgain(ctx context.Context, in *pb.HelloPoseidon) (*p
 }
 
 func main() {
+	fmt.Println("Server starting")
 	lis, err := net.Listen("tcp", port)
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
