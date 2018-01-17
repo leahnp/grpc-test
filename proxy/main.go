@@ -23,7 +23,7 @@ func run() error {
 
   mux := runtime.NewServeMux()
   opts := []grpc.DialOption{grpc.WithInsecure()}
-  err := gw.RegisterYourServiceHandlerFromEndpoint(ctx, mux, *poseidonEndpoint, opts)
+  err := gw.RegisterPingPoseidonHandlerFromEndpoint(ctx, mux, *poseidonEndpoint, opts)
   if err != nil {
     return err
   }
